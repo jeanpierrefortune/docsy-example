@@ -4,7 +4,7 @@ linkTitle: "Keyple Core"
 date: 2020-02-24
 weight: 1
 description: >
-  Terminal application generic API for: reader access, and generic 'Secure Element' selection
+  Terminal application generic API for: reader access, and generic 'Secure Element' selection.
 ---
 
 This high-level API is convenient for developers implementing smart card processing application for terminal interfaced with smart card readers.
