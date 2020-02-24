@@ -4,7 +4,7 @@ linkTitle: "Keyple Calypso"
 date: 2020-02-24
 weight: 2
 description: >
-  Terminal application Calypso API for: 'Calypso Portable Object' selection and transaction.
+  Terminal application Calypso API for: 'Calypso Portable Object' selection and transaction
 ---
 
 [1  Packages & features](#packages--features)<br>
