@@ -1,7 +1,7 @@
 ---
 title: "Keyple ‘Calypso’ – User guide (high level API)"
 linkTitle: "Keyple Calypso"
-date: 2017-01-05
+date: 2020-02-24
 weight: 2
 description: >
   Terminal application Calypso API for: 'Calypso Portable Object' selection and transaction.

@@ -1,7 +1,7 @@
 ---
 title: "Keyple ‘Remote SE’ – User guide (high level API)"
 linkTitle: "Keyple Remote SE"
-date: 2017-01-05
+date: 2020-02-24
 weight: 3
 description: >
   The Remote SE architecture allows a device to communicate remotely with a **SE Reader** plugged into another device.
