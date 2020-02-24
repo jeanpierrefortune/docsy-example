@@ -1,5 +1,5 @@
 baseURL = "https://jeanpierrefortune.github.io/docsy-example/"
-title = "Goldydocs"
+title = "Eclipse Keyple"
 
 enableRobotsTXT = true
 
@@ -51,20 +51,20 @@ id = "UA-00000000-0"
 
 # Language configuration
 
-[languages]
-[languages.en]
-title = "Goldydocs"
-description = "A Docsy example site"
-languageName ="English"
-# Weight used for sorting.
-weight = 1
-[languages.no]
-title = "Goldydocs"
-description = "Docsy er operativsystem for skyen"
-languageName ="Norsk"
-contentDir = "content/no"
-time_format_default = "02.01.2006"
-time_format_blog = "02.01.2006"
+#[languages]
+#[languages.en]
+#title = "Goldydocs"
+#description = "A Docsy example site"
+#languageName ="English"
+## Weight used for sorting.
+#weight = 1
+#[languages.no]
+#title = "Goldydocs"
+#description = "Docsy er operativsystem for skyen"
+#languageName ="Norsk"
+#contentDir = "content/no"
+#time_format_default = "02.01.2006"
+#time_format_blog = "02.01.2006"
 
 [markup]
   [markup.goldmark]
@@ -74,8 +74,8 @@ time_format_blog = "02.01.2006"
 # Everything below this are Site Params
 
 [params]
-copyright = "The Docsy Authors"
-privacy_policy = "https://policies.google.com/privacy"
+copyright = "Calypso Networks Association https://www.calypsonet-asso.org/"
+#privacy_policy = "https://policies.google.com/privacy"
 
 # First one is picked as the Twitter card image if not set on page.
 # images = ["images/project-illustration.png"]
