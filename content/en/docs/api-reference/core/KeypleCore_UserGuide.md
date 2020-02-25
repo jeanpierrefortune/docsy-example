@@ -67,7 +67,7 @@ Using a SE reader, depending on its capabilities, there can be two ways to selec
 
 At the end the terminal gets a selected SE, it can follow by operating APDU commands with the selected SE until the communication channel is kept open.
 
-![SE Selection Scenarii scheme](../img/KeypleCore-0-SE_SelectionScenarii.png "SE Selection Scenarii")
+![SE Selection Scenarii scheme](../../img/KeypleCore-0-SE_SelectionScenarii.png "SE Selection Scenarii")
 
 Then a Keyple Core extension could be used to operates APDU commands with the selected SE solution.
 > The Keyple Calypso extension provides a high-level API to defined ticketing processing involving Calypso cards, cf.: [“Keyple Calypso User Guide”](https://github.com/eclipse/keyple-java/blob/master/docs/KeypleCalypso_UserGuide.adoc).
@@ -85,7 +85,7 @@ To secure the usage of the SE Proxy API for the development of terminal applicat
  - For a specific plugin, only the plugin & reader interfaces (SpecificPlugin & SpecificReader) and the factory (class SpecificPluginFactory) are public.
  - The factory of a plugin is set to register a specific plugin to the SE Proxy Service.
 
-![SE Proxy - Plugin Setting scheme](../img/KeypleCore-1-SE_Proxy-PluginSetting.png "SE Proxy - Plugin Setting")
+![SE Proxy - Plugin Setting scheme](../../img/KeypleCore-1-SE_Proxy-PluginSetting.png "SE Proxy - Plugin Setting")
 
 Most of plugins of local readers of Keyple are defined as singleton with a unique instance (e.g.: PC/SC, Android NFC, Android OMAPI, most of embedded readers).
 
@@ -96,7 +96,7 @@ The SE Proxy Service allows to get all the list of the active plugins. A specifi
 
 In the same way, a plugin can provide the list of all the plugged readers.
 
-![SE Proxy - Reader Access scheme](../img/KeypleCore-2-SE_Proxy-ReaderAccess.png "SE Proxy - Reader Access")
+![SE Proxy - Reader Access scheme](../../img/KeypleCore-2-SE_Proxy-ReaderAccess.png "SE Proxy - Reader Access")
 
 Depending on the native reader technology, some specific parameters could be defined at the plugin or reader level.
 
@@ -125,7 +125,7 @@ For some SE terminal, the processing is dynamically driven by the insertion/remo
 
 E.g., in transportation, the ticketing transaction of access control gates is often started when a contactless card is detected in the field of the reader. For that, in Keyple, a SE reader or a plugin has to be observable.
 
-![SE Proxy - Observer Pattern scheme](../img/KeypleCore-3-SE_Proxy-ObserverPattern.png "SE Proxy - Observer Pattern")
+![SE Proxy - Observer Pattern scheme](../../img/KeypleCore-3-SE_Proxy-ObserverPattern.png "SE Proxy - Observer Pattern")
 
 A plugin could be optionally observable (by implementing ObservablePlugin).
 
@@ -150,7 +150,7 @@ On an observable reader, there is in addition the possibility to define a "defau
 
 > For SE terminal for which the processing is "dynamically" driven by the presence of a SE in a reader, the transaction starts in general with the detection of the insertion of a SE and its automatic selection. The reader observer is then notified to analyze the response of the selected SE, and to continue the transaction with the SE. We call this kind of transaction: a "default selection transaction".
 
-![SE Proxy - SE Listening scheme](../img/KeypleCore-4-SE_Proxy-SE_Listening.png "SE Proxy - SE Listening")
+![SE Proxy - SE Listening scheme](../../img/KeypleCore-4-SE_Proxy-SE_Listening.png "SE Proxy - SE Listening")
 
 #### Reader notification modes
 If no default selection is defined, an observable reader notifies its observers for “SE insertion” (whatever the SE detected) or “SE removed” events.
@@ -185,7 +185,7 @@ To select a Secure Element, a SE Selector has to be defined, based on one to thr
  - A SE could be filtered for an ATR (Answer To Reset) matching a specific regular expression.
  - A specific application of a SE could be selected by setting its AID (Application IDentifier). 
 
-![SE Proxy - SE Selector scheme](../img/KeypleCore-5-SE_Proxy-SE_Selector.png "SE Proxy - SE Selector")
+![SE Proxy - SE Selector scheme](../../img/KeypleCore-5-SE_Proxy-SE_Selector.png "SE Proxy - SE Selector")
 
 
 ### Selection transaction
@@ -206,7 +206,7 @@ Depending on the setting of the reader, the processing of the selection could be
 > cf. [“Generic Use Case 1 / Explicit AID Selection”](https://github.com/eclipse/keyple-java/blob/develop/java/example/generic/pc/UseCase1_ExplicitSelectionAid/src/main/java/org/eclipse/keyple/example/generic/pc/usecase1/ExplicitSelectionAid_Pcsc.java) example<br>
 > cf. [“Generic Use Case 2 / Default Selection Notification”](https://github.com/eclipse/keyple-java/blob/develop/java/example/generic/pc/UseCase2_DefaultSelectionNotification/src/main/java/org/eclipse/keyple/example/generic/pc/usecase2/DefaultSelectionNotification_Pcsc.java) example
 
-![SE Proxy - SE Selection scheme](../img/KeypleCore-6-SE_Proxy-SE_Selection.png "SE Proxy - SE Selection")
+![SE Proxy - SE Selection scheme](../../img/KeypleCore-6-SE_Proxy-SE_Selection.png "SE Proxy - SE Selection")
 
 In case a SE Selection is prepared with a channel control mode defined as “keep open”, then the different prepared selectors are operated with the presented SE, but the processing of the selection stops when a selector matches the SE.
 

@@ -94,11 +94,11 @@ DtoNode can be implemented in top of websocket protocol or http webservice proto
 
 In case of http webservice, a polling mechanism can be implemented so the server can send messages to the client.
 
-![alt_text](../img/KeypleRemoteSe_DtoNode.png "KeypleRemoteSe_DtoNode.png")
+![alt_text](../../img/KeypleRemoteSe_DtoNode.png "KeypleRemoteSe_DtoNode.png")
 
 ## Architecture overview
 
-![alt_text](../img/KeypleRemoteSe_Architecture.png "image_tooltip")
+![alt_text](../../img/KeypleRemoteSe_Architecture.png "image_tooltip")
 
 ## Quickstart Guide
 
