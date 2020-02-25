@@ -228,10 +228,10 @@ cf. &lt;a href=&#34;https://github.com/eclipse/keyple-java/blob/develop/java/exa
     
     <item>
       <title>Docs: Keyple ‘Calypso’ – User guide (high level API)</title>
-      <link>https://jeanpierrefortune.github.io/docsy-example/docs/api-reference/keyplecalypso_userguide/</link>
+      <link>https://jeanpierrefortune.github.io/docsy-example/docs/api-reference/calypso/keyplecalypso_userguide/</link>
       <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jeanpierrefortune.github.io/docsy-example/docs/api-reference/keyplecalypso_userguide/</guid>
+      <guid>https://jeanpierrefortune.github.io/docsy-example/docs/api-reference/calypso/keyplecalypso_userguide/</guid>
       <description>
         
         
@@ -321,6 +321,26 @@ A ‘PO resource’ is the set of a Calypso PO and the reader on which it is sel
 &lt;blockquote&gt;
 &lt;p&gt;cf. &lt;a href=&#34;https://github.com/eclipse/keyple-java/blob/develop/java/example/calypso/pc/UseCase5_MultipleSession/src/main/java/org/eclipse/keyple/example/calypso/pc/usecase5/MultipleSession_Pcsc.java&#34;&gt;“Calypso Use Case 5 / PO Multiple Session&amp;rdquo;&lt;/a&gt; example&lt;/p&gt;
 &lt;/blockquote&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Keyple Calypso – Evolution 0.9</title>
+      <link>https://jeanpierrefortune.github.io/docsy-example/docs/api-reference/calypso/evo0.9/calypso-evo-0.9/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jeanpierrefortune.github.io/docsy-example/docs/api-reference/calypso/evo0.9/calypso-evo-0.9/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The selection API
+The role of this API is
+to detect the presentation of a particular Calypso PO,
+to select the target application (in the ISO7816-4 sense),
+to execute additional commands (among a reduced set) following the selection.
+The data produced by this mechanism is a CalypsoPo object (instance of the generic keyple-core object AbstractMatchingSe).
+The CalypsoPo object contains the information derived from the FCI analysis received in response to the selection command as well as the data received in response to any additional commands that may have been executed.&lt;/p&gt;
 
       </description>
     </item>
