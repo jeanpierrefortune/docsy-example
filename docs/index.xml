@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: Keyple ‘Core’ – User guide (high level API)</title>
-      <link>https://jeanpierrefortune.github.io/docsy-example/docs/api-reference/keyplecore_userguide/</link>
+      <link>https://jeanpierrefortune.github.io/docsy-example/docs/api-reference/core/keyplecore_userguide/</link>
       <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jeanpierrefortune.github.io/docsy-example/docs/api-reference/keyplecore_userguide/</guid>
+      <guid>https://jeanpierrefortune.github.io/docsy-example/docs/api-reference/core/keyplecore_userguide/</guid>
       <description>
         
         
@@ -327,10 +327,10 @@ A ‘PO resource’ is the set of a Calypso PO and the reader on which it is sel
     
     <item>
       <title>Docs: Keyple Calypso – Evolution 0.9</title>
-      <link>https://jeanpierrefortune.github.io/docsy-example/docs/api-reference/calypso/evo0.9/calypso-evo-0.9/</link>
+      <link>https://jeanpierrefortune.github.io/docsy-example/docs/api-reference/calypso/calypso-evo-0.9/</link>
       <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jeanpierrefortune.github.io/docsy-example/docs/api-reference/calypso/evo0.9/calypso-evo-0.9/</guid>
+      <guid>https://jeanpierrefortune.github.io/docsy-example/docs/api-reference/calypso/calypso-evo-0.9/</guid>
       <description>
         
         
@@ -355,7 +355,7 @@ The filtering mechanism consists of a regular expression targeting the ATR of th
 &lt;p&gt;The PoSelector acts as a filter to designate the Calypso PO you are targeting. Based on the generic keyple-core selection mechanism it implements filtering by communication protocol (ISO, B Prime) and by AID or ATR.
 Thus, any SE that does not meet the criteria defined by the PoSelector will not be reported to the application.
 The selection modes by AID or ATR are exclusive. The ATR mode targets POs that do not have AID selection capability such as very old PO revision 1.0.&lt;/p&gt;
-&lt;h3 id=&#34;java-api&#34;&gt;Java API&lt;/h3&gt;
+&lt;h3 id=&#34;summary&#34;&gt;Summary&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;enum&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;InvalidatedPo&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;
     &lt;span style=&#34;color:#000&#34;&gt;REJECT&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;ACCEPT&lt;/span&gt;
 &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
@@ -385,7 +385,33 @@ The selection modes by AID or ATR are exclusive. The ATR mode targets POs that d
 &lt;h2 id=&#34;matching-se&#34;&gt;Matching SE&lt;/h2&gt;
 &lt;p&gt;Another role of PoSelectionRequest is to provide the keyple-core selection mechanism with the means to build a CalypsoPo object. This object is returned by the getMatchingSe method of MatchingSelection (keyple-core).&lt;/p&gt;
 &lt;p&gt;For that, PoSelectionRequest implements the protected method &amp;ldquo;parse&amp;rdquo; which allows this specialization in CalypsoPo of the AbstractMatchingSe. The CalypsoPo is created from the parsing of the Select Application response (FCI) when the generic selection is processed.&lt;/p&gt;
-&lt;h3 id=&#34;java-api-1&#34;&gt;Java API&lt;/h3&gt;
+&lt;h3 id=&#34;summary-1&#34;&gt;Summary&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Public methods&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;void&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;prepareSelectFileCmd(byte[] path, String extraInfo)&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;void&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;prepareSelectFileCmd(SelectFileCmdBuild.SelectControl selectControl, String extraInfo)&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;void&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;prepareReadRecordsCmd(byte sfi, ReadDataStructure readDataStructureEnum, byte firstRecordNumber, int expectedLength, String extraInfo)&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;void&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;prepareReadRecordsCmd(byte sfi, ReadDataStructure readDataStructureEnum, byte firstRecordNumber, String extraInfo)&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;/* Constructor */&lt;/span&gt;
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;PoSelectionRequest&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PoSelector&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;poSelector&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)&lt;/span&gt; 
 
@@ -428,7 +454,7 @@ The selection modes by AID or ATR are exclusive. The ATR mode targets POs that d
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;java-api-2&#34;&gt;Java API&lt;/h3&gt;
+&lt;h3 id=&#34;java-api&#34;&gt;Java API&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;CalypsoPo&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SeResponse&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;selectionResponse&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;TransmissionMode&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;transmissionMode&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;extraInfo&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)&lt;/span&gt;
 
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;PoRevision&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;getRevision&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;()&lt;/span&gt;
@@ -479,13 +505,13 @@ The selection modes by AID or ATR are exclusive. The ATR mode targets POs that d
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;the-sam-selection-api&#34;&gt;The SAM selection API&lt;/h1&gt;
 &lt;h2 id=&#34;samselectionrequest&#34;&gt;SamSelectionRequest&lt;/h2&gt;
 &lt;p&gt;The SamSelectionRequest just overrides SeSelectionRequest to provide a way to build a CalypsoSam object during the selection process.&lt;/p&gt;
-&lt;h3 id=&#34;java-api-3&#34;&gt;Java API&lt;/h3&gt;
+&lt;h3 id=&#34;java-api-1&#34;&gt;Java API&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SamSelectionRequest&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SamSelector&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;samSelector&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;calypsosam&#34;&gt;CalypsoSam&lt;/h2&gt;
 &lt;p&gt;The CalypsoSam object is the result of a selection made with a SamSelectionRequest.&lt;/p&gt;
 &lt;p&gt;All information is extracted from the ATR.&lt;/p&gt;
 &lt;p&gt;Note: in the case of a HSM, the CalypsoSam is built from an ATR reconstituted from the information available at the HSM level.&lt;/p&gt;
-&lt;h3 id=&#34;java-api-4&#34;&gt;Java API&lt;/h3&gt;
+&lt;h3 id=&#34;java-api-2&#34;&gt;Java API&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;CalypsoSam&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SeResponse&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;selectionResponse&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;TransmissionMode&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;transmissionMode&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;extraInfo&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)&lt;/span&gt;
 
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SamRevision&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;getSamRevision&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;()&lt;/span&gt; 
@@ -1111,15 +1137,15 @@ This is a warning with a title.
     
     <item>
       <title>Docs: Keyple ‘Remote SE’ – User guide (high level API)</title>
-      <link>https://jeanpierrefortune.github.io/docsy-example/docs/api-reference/keypleremotese_userguide/</link>
+      <link>https://jeanpierrefortune.github.io/docsy-example/docs/api-reference/remotese/keypleremotese_userguide/</link>
       <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://jeanpierrefortune.github.io/docsy-example/docs/api-reference/keypleremotese_userguide/</guid>
+      <guid>https://jeanpierrefortune.github.io/docsy-example/docs/api-reference/remotese/keypleremotese_userguide/</guid>
       <description>
         
         
         &lt;h2 id=&#34;why-do-i-need-remote-se&#34;&gt;Why do I need Remote SE&lt;/h2&gt;
-&lt;p&gt;It is mostly used to host the Ticketing Logic on a remote server. The end user terminal allows the server to connect to its local **SE Reader **via the Remote Se API, then the server can communicate with the Reader as if it was a local reader.&lt;/p&gt;
+&lt;p&gt;It is mostly used to host the Ticketing Logic on a remote server. The end user terminal allows the server to connect to its local &lt;strong&gt;SE Reader&lt;/strong&gt; via the Remote Se API, then the server can communicate with the Reader as if it was a local reader.&lt;/p&gt;
 &lt;p&gt;In a Calypso context, it is useful when a SAM reader and a PO reader are not connected to the same terminal. With the Remote Se API, you can open Calypso transaction within a distributed architecture.&lt;/p&gt;
 &lt;h2 id=&#34;how-does-it-work&#34;&gt;How does it work&lt;/h2&gt;
 &lt;p&gt;The architecture is based on a Slave-Master principle. The slave hosts a local SE reader that will be accessed remotely by the Master.&lt;/p&gt;
