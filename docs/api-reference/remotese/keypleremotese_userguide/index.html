@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jeanpierrefortune.github.io/docsy-example/docs/api-reference/remotese/keypleremotese_userguide/" />
 <meta property="article:published_time" content="2020-02-24T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-02-25T16:51:47+01:00" />
+<meta property="article:modified_time" content="2020-02-25T18:22:53+01:00" />
 <meta itemprop="name" content="Keyple ‘Remote SE’ – User guide (high level API)">
 <meta itemprop="description" content="The Remote SE architecture allows a device to communicate remotely with a **SE Reader** plugged into another device.
 ">
 <meta itemprop="datePublished" content="2020-02-24T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-02-25T16:51:47&#43;01:00" />
+<meta itemprop="dateModified" content="2020-02-25T18:22:53&#43;01:00" />
 <meta itemprop="wordCount" content="1475">
 
 
@@ -587,9 +587,9 @@ On Master node the main object is the VirtualReader
 <p>To allow the slave and master to exchange KeypleDto, a transport layer should be implemented via simple node-to-node layout. Both SlaveAPI and MasterAPI needs a DtoNode to be functional.</p>
 <p>DtoNode can be implemented in top of websocket protocol or http webservice protocol. As Slave and Master have the initiative to send keypleDto, it is preferred to provide a 2-way communication protocol.</p>
 <p>In case of http webservice, a polling mechanism can be implemented so the server can send messages to the client.</p>
-<p><img src="../img/KeypleRemoteSe_DtoNode.png" alt="alt_text" title="KeypleRemoteSe_DtoNode.png"></p>
+<p><img src="../../img/KeypleRemoteSe_DtoNode.png" alt="alt_text" title="KeypleRemoteSe_DtoNode.png"></p>
 <h2 id="architecture-overview">Architecture overview</h2>
-<p><img src="../img/KeypleRemoteSe_Architecture.png" alt="alt_text" title="image_tooltip"></p>
+<p><img src="../../img/KeypleRemoteSe_Architecture.png" alt="alt_text" title="image_tooltip"></p>
 <h2 id="quickstart-guide">Quickstart Guide</h2>
 <h3 id="configure-master-api-with-a-dtonode">Configure Master API with a DtoNode</h3>
 <p>In this quickstart guide, we will use a pre-built transport layer for the Remote Se Architecture.</p>
@@ -731,7 +731,7 @@ public void update(final Object o) {
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified February 25, 2020: <a  href="https://github.com/jeanpierrefortune/docsy-example/commit/4e0e2db9db32b1a677576e19ec7c1adb9a27c36e">Update (4e0e2db)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified February 25, 2020: <a  href="https://github.com/jeanpierrefortune/docsy-example/commit/b1d35577041ed5788965d95149f6b223ff78b816">Update (b1d3557)</a>
 </div>
 </div>
 

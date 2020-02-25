@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jeanpierrefortune.github.io/docsy-example/docs/api-reference/core/keyplecore_userguide/" />
 <meta property="article:published_time" content="2020-02-24T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-02-25T16:51:47+01:00" />
+<meta property="article:modified_time" content="2020-02-25T18:22:53+01:00" />
 <meta itemprop="name" content="Keyple ‘Core’ – User guide (high level API)">
 <meta itemprop="description" content="Terminal application generic API for: reader access, and generic &#39;Secure Element&#39; selection.
 ">
 <meta itemprop="datePublished" content="2020-02-24T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-02-25T16:51:47&#43;01:00" />
+<meta itemprop="dateModified" content="2020-02-25T18:22:53&#43;01:00" />
 <meta itemprop="wordCount" content="2185">
 
 
@@ -585,7 +585,7 @@
 <li>Otherwise if the reader is “observable”, the operating of a “default selection”: in this case a default selection request is defined on the reader, the terminal observes the reader, and wait to be notified by the reader about a SE insertion and selection.</li>
 </ul>
 <p>At the end the terminal gets a selected SE, it can follow by operating APDU commands with the selected SE until the communication channel is kept open.</p>
-<p><img src="../img/KeypleCore-0-SE_SelectionScenarii.png" alt="SE Selection Scenarii scheme" title="SE Selection Scenarii"></p>
+<p><img src="../../img/KeypleCore-0-SE_SelectionScenarii.png" alt="SE Selection Scenarii scheme" title="SE Selection Scenarii"></p>
 <p>Then a Keyple Core extension could be used to operates APDU commands with the selected SE solution.</p>
 <blockquote>
 <p>The Keyple Calypso extension provides a high-level API to defined ticketing processing involving Calypso cards, cf.: <a href="https://github.com/eclipse/keyple-java/blob/master/docs/KeypleCalypso_UserGuide.adoc">“Keyple Calypso User Guide”</a>.</p>
@@ -603,13 +603,13 @@
 <li>For a specific plugin, only the plugin &amp; reader interfaces (SpecificPlugin &amp; SpecificReader) and the factory (class SpecificPluginFactory) are public.</li>
 <li>The factory of a plugin is set to register a specific plugin to the SE Proxy Service.</li>
 </ul>
-<p><img src="../img/KeypleCore-1-SE_Proxy-PluginSetting.png" alt="SE Proxy - Plugin Setting scheme" title="SE Proxy - Plugin Setting"></p>
+<p><img src="../../img/KeypleCore-1-SE_Proxy-PluginSetting.png" alt="SE Proxy - Plugin Setting scheme" title="SE Proxy - Plugin Setting"></p>
 <p>Most of plugins of local readers of Keyple are defined as singleton with a unique instance (e.g.: PC/SC, Android NFC, Android OMAPI, most of embedded readers).</p>
 <p>For the Remote SE plugin defined to manage remote readers, specific plugin instances are created for each communication interfaces.</p>
 <h3 id="se-readers-access">SE readers’ access</h3>
 <p>The SE Proxy Service allows to get all the list of the active plugins. A specific plugin could also be directly recovered through its name.</p>
 <p>In the same way, a plugin can provide the list of all the plugged readers.</p>
-<p><img src="../img/KeypleCore-2-SE_Proxy-ReaderAccess.png" alt="SE Proxy - Reader Access scheme" title="SE Proxy - Reader Access"></p>
+<p><img src="../../img/KeypleCore-2-SE_Proxy-ReaderAccess.png" alt="SE Proxy - Reader Access scheme" title="SE Proxy - Reader Access"></p>
 <p>Depending on the native reader technology, some specific parameters could be defined at the plugin or reader level.</p>
 <p>For a classic plugin, the number of readers is determinate, all the plugged readers of the plugin are directly available for the SE Proxy Service.</p>
 <h4 id="support-of-reader-farm-or-hsm">Support of reader farm or HSM</h4>
@@ -632,7 +632,7 @@
 <h3 id="plugin--reader-events">Plugin &amp; Reader events</h3>
 <p>For some SE terminal, the processing is dynamically driven by the insertion/remove of a SE in a reader, or by the plug/unplug of a reader.</p>
 <p>E.g., in transportation, the ticketing transaction of access control gates is often started when a contactless card is detected in the field of the reader. For that, in Keyple, a SE reader or a plugin has to be observable.</p>
-<p><img src="../img/KeypleCore-3-SE_Proxy-ObserverPattern.png" alt="SE Proxy - Observer Pattern scheme" title="SE Proxy - Observer Pattern"></p>
+<p><img src="../../img/KeypleCore-3-SE_Proxy-ObserverPattern.png" alt="SE Proxy - Observer Pattern scheme" title="SE Proxy - Observer Pattern"></p>
 <p>A plugin could be optionally observable (by implementing ObservablePlugin).</p>
 <ul>
 <li>In this case a terminal application could observe the plugin (by implementing PluginObserver) in order to be notified (PluginEvent) when a new reader is plugged to the plugin, or when a referenced reader is unplugged.</li>
@@ -655,7 +655,7 @@
 <blockquote>
 <p>For SE terminal for which the processing is &ldquo;dynamically&rdquo; driven by the presence of a SE in a reader, the transaction starts in general with the detection of the insertion of a SE and its automatic selection. The reader observer is then notified to analyze the response of the selected SE, and to continue the transaction with the SE. We call this kind of transaction: a &ldquo;default selection transaction&rdquo;.</p>
 </blockquote>
-<p><img src="../img/KeypleCore-4-SE_Proxy-SE_Listening.png" alt="SE Proxy - SE Listening scheme" title="SE Proxy - SE Listening"></p>
+<p><img src="../../img/KeypleCore-4-SE_Proxy-SE_Listening.png" alt="SE Proxy - SE Listening scheme" title="SE Proxy - SE Listening"></p>
 <h4 id="reader-notification-modes">Reader notification modes</h4>
 <p>If no default selection is defined, an observable reader notifies its observers for “SE insertion” (whatever the SE detected) or “SE removed” events.
 A default selection could be defined for the “always” or the &ldquo;matched only” notification mode.</p>
@@ -697,7 +697,7 @@ A default selection could be defined for the “always” or the &ldquo;matched 
 <li>A SE could be filtered for an ATR (Answer To Reset) matching a specific regular expression.</li>
 <li>A specific application of a SE could be selected by setting its AID (Application IDentifier).</li>
 </ul>
-<p><img src="../img/KeypleCore-5-SE_Proxy-SE_Selector.png" alt="SE Proxy - SE Selector scheme" title="SE Proxy - SE Selector"></p>
+<p><img src="../../img/KeypleCore-5-SE_Proxy-SE_Selector.png" alt="SE Proxy - SE Selector scheme" title="SE Proxy - SE Selector"></p>
 <h3 id="selection-transaction">Selection transaction</h3>
 <p>To operate a transaction with a SE, it should be firstly selected. The aim of the SE selection API is to get a SE resource: a set of a reader with a selected SE.</p>
 <p>A SE Selection is managed in two steps:</p>
@@ -715,7 +715,7 @@ A default selection could be defined for the “always” or the &ldquo;matched 
 <p>cf. <a href="https://github.com/eclipse/keyple-java/blob/develop/java/example/generic/pc/UseCase1_ExplicitSelectionAid/src/main/java/org/eclipse/keyple/example/generic/pc/usecase1/ExplicitSelectionAid_Pcsc.java">“Generic Use Case 1 / Explicit AID Selection”</a> example<br>
 cf. <a href="https://github.com/eclipse/keyple-java/blob/develop/java/example/generic/pc/UseCase2_DefaultSelectionNotification/src/main/java/org/eclipse/keyple/example/generic/pc/usecase2/DefaultSelectionNotification_Pcsc.java">“Generic Use Case 2 / Default Selection Notification”</a> example</p>
 </blockquote>
-<p><img src="../img/KeypleCore-6-SE_Proxy-SE_Selection.png" alt="SE Proxy - SE Selection scheme" title="SE Proxy - SE Selection"></p>
+<p><img src="../../img/KeypleCore-6-SE_Proxy-SE_Selection.png" alt="SE Proxy - SE Selection scheme" title="SE Proxy - SE Selection"></p>
 <p>In case a SE Selection is prepared with a channel control mode defined as “keep open”, then the different prepared selectors are operated with the presented SE, but the processing of the selection stops when a selector matches the SE.</p>
 <ul>
 <li>The result of the SE selection could be a single ‘matching SE’: this SE is kept as selected in the reader. It’s possible to directly operate command with the SE.</li>
@@ -795,7 +795,7 @@ cf. <a href="https://github.com/eclipse/keyple-java/blob/develop/java/example/ge
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified February 25, 2020: <a  href="https://github.com/jeanpierrefortune/docsy-example/commit/4e0e2db9db32b1a677576e19ec7c1adb9a27c36e">Update (4e0e2db)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified February 25, 2020: <a  href="https://github.com/jeanpierrefortune/docsy-example/commit/b1d35577041ed5788965d95149f6b223ff78b816">Update (b1d3557)</a>
 </div>
 </div>
 

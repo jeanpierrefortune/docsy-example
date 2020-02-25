@@ -75,7 +75,7 @@
 &lt;li&gt;Otherwise if the reader is “observable”, the operating of a “default selection”: in this case a default selection request is defined on the reader, the terminal observes the reader, and wait to be notified by the reader about a SE insertion and selection.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;At the end the terminal gets a selected SE, it can follow by operating APDU commands with the selected SE until the communication channel is kept open.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../img/KeypleCore-0-SE_SelectionScenarii.png&#34; alt=&#34;SE Selection Scenarii scheme&#34; title=&#34;SE Selection Scenarii&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/KeypleCore-0-SE_SelectionScenarii.png&#34; alt=&#34;SE Selection Scenarii scheme&#34; title=&#34;SE Selection Scenarii&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Then a Keyple Core extension could be used to operates APDU commands with the selected SE solution.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The Keyple Calypso extension provides a high-level API to defined ticketing processing involving Calypso cards, cf.: &lt;a href=&#34;https://github.com/eclipse/keyple-java/blob/master/docs/KeypleCalypso_UserGuide.adoc&#34;&gt;“Keyple Calypso User Guide”&lt;/a&gt;.&lt;/p&gt;
@@ -93,13 +93,13 @@
 &lt;li&gt;For a specific plugin, only the plugin &amp;amp; reader interfaces (SpecificPlugin &amp;amp; SpecificReader) and the factory (class SpecificPluginFactory) are public.&lt;/li&gt;
 &lt;li&gt;The factory of a plugin is set to register a specific plugin to the SE Proxy Service.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;../img/KeypleCore-1-SE_Proxy-PluginSetting.png&#34; alt=&#34;SE Proxy - Plugin Setting scheme&#34; title=&#34;SE Proxy - Plugin Setting&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/KeypleCore-1-SE_Proxy-PluginSetting.png&#34; alt=&#34;SE Proxy - Plugin Setting scheme&#34; title=&#34;SE Proxy - Plugin Setting&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Most of plugins of local readers of Keyple are defined as singleton with a unique instance (e.g.: PC/SC, Android NFC, Android OMAPI, most of embedded readers).&lt;/p&gt;
 &lt;p&gt;For the Remote SE plugin defined to manage remote readers, specific plugin instances are created for each communication interfaces.&lt;/p&gt;
 &lt;h3 id=&#34;se-readers-access&#34;&gt;SE readers’ access&lt;/h3&gt;
 &lt;p&gt;The SE Proxy Service allows to get all the list of the active plugins. A specific plugin could also be directly recovered through its name.&lt;/p&gt;
 &lt;p&gt;In the same way, a plugin can provide the list of all the plugged readers.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../img/KeypleCore-2-SE_Proxy-ReaderAccess.png&#34; alt=&#34;SE Proxy - Reader Access scheme&#34; title=&#34;SE Proxy - Reader Access&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/KeypleCore-2-SE_Proxy-ReaderAccess.png&#34; alt=&#34;SE Proxy - Reader Access scheme&#34; title=&#34;SE Proxy - Reader Access&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Depending on the native reader technology, some specific parameters could be defined at the plugin or reader level.&lt;/p&gt;
 &lt;p&gt;For a classic plugin, the number of readers is determinate, all the plugged readers of the plugin are directly available for the SE Proxy Service.&lt;/p&gt;
 &lt;h4 id=&#34;support-of-reader-farm-or-hsm&#34;&gt;Support of reader farm or HSM&lt;/h4&gt;
@@ -122,7 +122,7 @@
 &lt;h3 id=&#34;plugin--reader-events&#34;&gt;Plugin &amp;amp; Reader events&lt;/h3&gt;
 &lt;p&gt;For some SE terminal, the processing is dynamically driven by the insertion/remove of a SE in a reader, or by the plug/unplug of a reader.&lt;/p&gt;
 &lt;p&gt;E.g., in transportation, the ticketing transaction of access control gates is often started when a contactless card is detected in the field of the reader. For that, in Keyple, a SE reader or a plugin has to be observable.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../img/KeypleCore-3-SE_Proxy-ObserverPattern.png&#34; alt=&#34;SE Proxy - Observer Pattern scheme&#34; title=&#34;SE Proxy - Observer Pattern&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/KeypleCore-3-SE_Proxy-ObserverPattern.png&#34; alt=&#34;SE Proxy - Observer Pattern scheme&#34; title=&#34;SE Proxy - Observer Pattern&#34;&gt;&lt;/p&gt;
 &lt;p&gt;A plugin could be optionally observable (by implementing ObservablePlugin).&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;In this case a terminal application could observe the plugin (by implementing PluginObserver) in order to be notified (PluginEvent) when a new reader is plugged to the plugin, or when a referenced reader is unplugged.&lt;/li&gt;
@@ -145,7 +145,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;For SE terminal for which the processing is &amp;ldquo;dynamically&amp;rdquo; driven by the presence of a SE in a reader, the transaction starts in general with the detection of the insertion of a SE and its automatic selection. The reader observer is then notified to analyze the response of the selected SE, and to continue the transaction with the SE. We call this kind of transaction: a &amp;ldquo;default selection transaction&amp;rdquo;.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;../img/KeypleCore-4-SE_Proxy-SE_Listening.png&#34; alt=&#34;SE Proxy - SE Listening scheme&#34; title=&#34;SE Proxy - SE Listening&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/KeypleCore-4-SE_Proxy-SE_Listening.png&#34; alt=&#34;SE Proxy - SE Listening scheme&#34; title=&#34;SE Proxy - SE Listening&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;reader-notification-modes&#34;&gt;Reader notification modes&lt;/h4&gt;
 &lt;p&gt;If no default selection is defined, an observable reader notifies its observers for “SE insertion” (whatever the SE detected) or “SE removed” events.
 A default selection could be defined for the “always” or the &amp;ldquo;matched only” notification mode.&lt;/p&gt;
@@ -187,7 +187,7 @@ A default selection could be defined for the “always” or the &amp;ldquo;matc
 &lt;li&gt;A SE could be filtered for an ATR (Answer To Reset) matching a specific regular expression.&lt;/li&gt;
 &lt;li&gt;A specific application of a SE could be selected by setting its AID (Application IDentifier).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;../img/KeypleCore-5-SE_Proxy-SE_Selector.png&#34; alt=&#34;SE Proxy - SE Selector scheme&#34; title=&#34;SE Proxy - SE Selector&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/KeypleCore-5-SE_Proxy-SE_Selector.png&#34; alt=&#34;SE Proxy - SE Selector scheme&#34; title=&#34;SE Proxy - SE Selector&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;selection-transaction&#34;&gt;Selection transaction&lt;/h3&gt;
 &lt;p&gt;To operate a transaction with a SE, it should be firstly selected. The aim of the SE selection API is to get a SE resource: a set of a reader with a selected SE.&lt;/p&gt;
 &lt;p&gt;A SE Selection is managed in two steps:&lt;/p&gt;
@@ -205,7 +205,7 @@ A default selection could be defined for the “always” or the &amp;ldquo;matc
 &lt;p&gt;cf. &lt;a href=&#34;https://github.com/eclipse/keyple-java/blob/develop/java/example/generic/pc/UseCase1_ExplicitSelectionAid/src/main/java/org/eclipse/keyple/example/generic/pc/usecase1/ExplicitSelectionAid_Pcsc.java&#34;&gt;“Generic Use Case 1 / Explicit AID Selection”&lt;/a&gt; example&lt;br&gt;
 cf. &lt;a href=&#34;https://github.com/eclipse/keyple-java/blob/develop/java/example/generic/pc/UseCase2_DefaultSelectionNotification/src/main/java/org/eclipse/keyple/example/generic/pc/usecase2/DefaultSelectionNotification_Pcsc.java&#34;&gt;“Generic Use Case 2 / Default Selection Notification”&lt;/a&gt; example&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;../img/KeypleCore-6-SE_Proxy-SE_Selection.png&#34; alt=&#34;SE Proxy - SE Selection scheme&#34; title=&#34;SE Proxy - SE Selection&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/KeypleCore-6-SE_Proxy-SE_Selection.png&#34; alt=&#34;SE Proxy - SE Selection scheme&#34; title=&#34;SE Proxy - SE Selection&#34;&gt;&lt;/p&gt;
 &lt;p&gt;In case a SE Selection is prepared with a channel control mode defined as “keep open”, then the different prepared selectors are operated with the presented SE, but the processing of the selection stops when a selector matches the SE.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The result of the SE selection could be a single ‘matching SE’: this SE is kept as selected in the reader. It’s possible to directly operate command with the SE.&lt;/li&gt;
@@ -274,7 +274,7 @@ PO transaction:
 &lt;p&gt;cf. &lt;a href=&#34;https://github.com/eclipse/keyple-java/blob/develop/java/example/calypso/pc/UseCase1_ExplicitSelectionAid/src/main/java/org/eclipse/keyple/example/calypso/pc/usecase1/ExplicitSelectionAid_Pcsc.java&#34;&gt;“Calypso Use Case 1 / Explicit AID Selection”&lt;/a&gt; example&lt;br&gt;
 cf. &lt;a href=&#34;https://github.com/eclipse/keyple-java/blob/develop/java/example/calypso/pc/UseCase2_DefaultSelectionNotification/src/main/java/org/eclipse/keyple/example/calypso/pc/usecase2/DefaultSelectionNotification_Pcsc.java&#34;&gt;“Calypso Use Case 2 / Default Selection Notification”&lt;/a&gt; example&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;../img/KeypleCalypso-1-Transaction-PO_Selection.png&#34; alt=&#34;Calypso - PO Selection scheme&#34; title=&#34;Calypso - PO Selection&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/KeypleCalypso-1-Transaction-PO_Selection.png&#34; alt=&#34;Calypso - PO Selection scheme&#34; title=&#34;Calypso - PO Selection&#34;&gt;
 A ‘PO resource’ is the set of a Calypso PO and the reader on which it is selected.&lt;/p&gt;
 &lt;p&gt;In a same way the Calypso APO provides the tool to select a Calypso security module (a SAM). A SAM selector doesn’t support AID. The corresponding matching SE is a Calypso SAM. A Calypso SAM and the reader used for its selection defines a ‘SAM resource’.&lt;/p&gt;
 &lt;h2 id=&#34;calypso-secure-transaction&#34;&gt;Calypso secure transaction&lt;/h2&gt;
@@ -312,7 +312,7 @@ A ‘PO resource’ is the set of a Calypso PO and the reader on which it is sel
 &lt;li&gt;3 PO requests (1 for the PO selection + 1 for the PO session opening + 1 for the PO session closing).&lt;/li&gt;
 &lt;li&gt;And 3 SAM requests if the SAM is already selected (1 for the PO session opening + 2 for the PO session closing); otherwise 4 SAM requests if the SAM isn’t already selected.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;../img/KeypleCalypso-2-Transaction-PO_Session.png&#34; alt=&#34;Calypso - PO Transaction scheme&#34; title=&#34;Calypso - PO Transaction&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/KeypleCalypso-2-Transaction-PO_Session.png&#34; alt=&#34;Calypso - PO Transaction scheme&#34; title=&#34;Calypso - PO Transaction&#34;&gt;&lt;/p&gt;
 &lt;p&gt;By default, the PO transaction manages the Calypso secure session as ‘atomic’: the cumulative amount of PO updates command can’t exceed the size of the PO session buffer.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;cf. &lt;a href=&#34;https://github.com/eclipse/keyple-java/blob/develop/java/example/calypso/pc/UseCase4_PoAuthentication/src/main/java/org/eclipse/keyple/example/calypso/pc/usecase4/PoAuthentication_Pcsc.java&#34;&gt;“Calypso Use Case 4 / PO Authentication”&lt;/a&gt; example&lt;/p&gt;
@@ -1193,9 +1193,9 @@ On Master node the main object is the VirtualReader
 &lt;p&gt;To allow the slave and master to exchange KeypleDto, a transport layer should be implemented via simple node-to-node layout. Both SlaveAPI and MasterAPI needs a DtoNode to be functional.&lt;/p&gt;
 &lt;p&gt;DtoNode can be implemented in top of websocket protocol or http webservice protocol. As Slave and Master have the initiative to send keypleDto, it is preferred to provide a 2-way communication protocol.&lt;/p&gt;
 &lt;p&gt;In case of http webservice, a polling mechanism can be implemented so the server can send messages to the client.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../img/KeypleRemoteSe_DtoNode.png&#34; alt=&#34;alt_text&#34; title=&#34;KeypleRemoteSe_DtoNode.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/KeypleRemoteSe_DtoNode.png&#34; alt=&#34;alt_text&#34; title=&#34;KeypleRemoteSe_DtoNode.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;architecture-overview&#34;&gt;Architecture overview&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;../img/KeypleRemoteSe_Architecture.png&#34; alt=&#34;alt_text&#34; title=&#34;image_tooltip&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/KeypleRemoteSe_Architecture.png&#34; alt=&#34;alt_text&#34; title=&#34;image_tooltip&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;quickstart-guide&#34;&gt;Quickstart Guide&lt;/h2&gt;
 &lt;h3 id=&#34;configure-master-api-with-a-dtonode&#34;&gt;Configure Master API with a DtoNode&lt;/h3&gt;
 &lt;p&gt;In this quickstart guide, we will use a pre-built transport layer for the Remote Se Architecture.&lt;/p&gt;

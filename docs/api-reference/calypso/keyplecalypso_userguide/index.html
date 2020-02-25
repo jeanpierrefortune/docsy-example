@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jeanpierrefortune.github.io/docsy-example/docs/api-reference/calypso/keyplecalypso_userguide/" />
 <meta property="article:published_time" content="2020-02-24T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-02-25T16:51:47+01:00" />
+<meta property="article:modified_time" content="2020-02-25T18:22:53+01:00" />
 <meta itemprop="name" content="Keyple ‘Calypso’ – User guide (high level API)">
 <meta itemprop="description" content="Terminal application Calypso API for: &#39;Calypso Portable Object&#39; selection and transaction
 ">
 <meta itemprop="datePublished" content="2020-02-24T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-02-25T16:51:47&#43;01:00" />
+<meta itemprop="dateModified" content="2020-02-25T18:22:53&#43;01:00" />
 <meta itemprop="wordCount" content="942">
 
 
@@ -569,7 +569,7 @@ PO transaction:
 <p>cf. <a href="https://github.com/eclipse/keyple-java/blob/develop/java/example/calypso/pc/UseCase1_ExplicitSelectionAid/src/main/java/org/eclipse/keyple/example/calypso/pc/usecase1/ExplicitSelectionAid_Pcsc.java">“Calypso Use Case 1 / Explicit AID Selection”</a> example<br>
 cf. <a href="https://github.com/eclipse/keyple-java/blob/develop/java/example/calypso/pc/UseCase2_DefaultSelectionNotification/src/main/java/org/eclipse/keyple/example/calypso/pc/usecase2/DefaultSelectionNotification_Pcsc.java">“Calypso Use Case 2 / Default Selection Notification”</a> example</p>
 </blockquote>
-<p><img src="../img/KeypleCalypso-1-Transaction-PO_Selection.png" alt="Calypso - PO Selection scheme" title="Calypso - PO Selection">
+<p><img src="../../img/KeypleCalypso-1-Transaction-PO_Selection.png" alt="Calypso - PO Selection scheme" title="Calypso - PO Selection">
 A ‘PO resource’ is the set of a Calypso PO and the reader on which it is selected.</p>
 <p>In a same way the Calypso APO provides the tool to select a Calypso security module (a SAM). A SAM selector doesn’t support AID. The corresponding matching SE is a Calypso SAM. A Calypso SAM and the reader used for its selection defines a ‘SAM resource’.</p>
 <h2 id="calypso-secure-transaction">Calypso secure transaction</h2>
@@ -607,7 +607,7 @@ A ‘PO resource’ is the set of a Calypso PO and the reader on which it is sel
 <li>3 PO requests (1 for the PO selection + 1 for the PO session opening + 1 for the PO session closing).</li>
 <li>And 3 SAM requests if the SAM is already selected (1 for the PO session opening + 2 for the PO session closing); otherwise 4 SAM requests if the SAM isn’t already selected.</li>
 </ul>
-<p><img src="../img/KeypleCalypso-2-Transaction-PO_Session.png" alt="Calypso - PO Transaction scheme" title="Calypso - PO Transaction"></p>
+<p><img src="../../img/KeypleCalypso-2-Transaction-PO_Session.png" alt="Calypso - PO Transaction scheme" title="Calypso - PO Transaction"></p>
 <p>By default, the PO transaction manages the Calypso secure session as ‘atomic’: the cumulative amount of PO updates command can’t exceed the size of the PO session buffer.</p>
 <blockquote>
 <p>cf. <a href="https://github.com/eclipse/keyple-java/blob/develop/java/example/calypso/pc/UseCase4_PoAuthentication/src/main/java/org/eclipse/keyple/example/calypso/pc/usecase4/PoAuthentication_Pcsc.java">“Calypso Use Case 4 / PO Authentication”</a> example</p>
@@ -679,7 +679,7 @@ A ‘PO resource’ is the set of a Calypso PO and the reader on which it is sel
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified February 25, 2020: <a  href="https://github.com/jeanpierrefortune/docsy-example/commit/4e0e2db9db32b1a677576e19ec7c1adb9a27c36e">Update (4e0e2db)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified February 25, 2020: <a  href="https://github.com/jeanpierrefortune/docsy-example/commit/b1d35577041ed5788965d95149f6b223ff78b816">Update (b1d3557)</a>
 </div>
 </div>
 
