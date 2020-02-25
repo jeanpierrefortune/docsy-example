@@ -1,6 +1,6 @@
 ---
 title: "Keyple ‘Remote SE’ – User guide (high level API)"
-linkTitle: "Keyple Remote SE"
+linkTitle: "3. Keyple Remote SE"
 date: 2020-02-24
 weight: 3
 description: >
@@ -10,7 +10,7 @@ description: >
 ## Why do I need Remote SE
 
 
-It is mostly used to host the Ticketing Logic on a remote server. The end user terminal allows the server to connect to its local **SE Reader **via the Remote Se API, then the server can communicate with the Reader as if it was a local reader.
+It is mostly used to host the Ticketing Logic on a remote server. The end user terminal allows the server to connect to its local **SE Reader** via the Remote Se API, then the server can communicate with the Reader as if it was a local reader.
 
 In a Calypso context, it is useful when a SAM reader and a PO reader are not connected to the same terminal. With the Remote Se API, you can open Calypso transaction within a distributed architecture.
 

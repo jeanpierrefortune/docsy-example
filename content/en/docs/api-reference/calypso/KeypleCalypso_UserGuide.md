@@ -1,6 +1,6 @@
 ---
 title: "Keyple ‘Calypso’ – User guide (high level API)"
-linkTitle: "1. Keyple Calypso"
+linkTitle: "2.1. Keyple Calypso 0.8"
 date: 2020-02-24
 weight: 2
 description: >

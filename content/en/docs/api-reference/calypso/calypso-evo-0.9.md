@@ -1,6 +1,6 @@
 ---
 title: "Keyple Calypso – Evolution 0.9"
-linkTitle: "2. Keyple Calypso Evo 0.9"
+linkTitle: "2.2 Keyple Calypso Evo 0.9"
 date: 2020-02-24
 weight: 2
 description: >
@@ -31,7 +31,9 @@ The PoSelector acts as a filter to designate the Calypso PO you are targeting. B
 Thus, any SE that does not meet the criteria defined by the PoSelector will not be reported to the application.
 The selection modes by AID or ATR are exclusive. The ATR mode targets POs that do not have AID selection capability such as very old PO revision 1.0.
 
-### Java API
+
+
+### Summary
 ```java
 public enum InvalidatedPo {
     REJECT, ACCEPT
@@ -75,7 +77,14 @@ Another role of PoSelectionRequest is to provide the keyple-core selection mecha
 
 For that, PoSelectionRequest implements the protected method "parse" which allows this specialization in CalypsoPo of the AbstractMatchingSe. The CalypsoPo is created from the parsing of the Select Application response (FCI) when the generic selection is processed.
 
-### Java API
+### Summary
+| Public methods                      |
+|-------------------|-----------------|
+| `void`   | `prepareSelectFileCmd(byte[] path, String extraInfo)` |
+| `void`   | `prepareSelectFileCmd(SelectFileCmdBuild.SelectControl selectControl, String extraInfo)` |
+| `void`   | `prepareReadRecordsCmd(byte sfi, ReadDataStructure readDataStructureEnum, byte firstRecordNumber, int expectedLength, String extraInfo)` |
+| `void`   | `prepareReadRecordsCmd(byte sfi, ReadDataStructure readDataStructureEnum, byte firstRecordNumber, String extraInfo)` |
+
 ```java
 /* Constructor */
 public PoSelectionRequest(PoSelector poSelector) 

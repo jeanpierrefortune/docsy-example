@@ -1,6 +1,6 @@
 ---
 title: "Keyple ‘Core’ – User guide (high level API)"
-linkTitle: "Keyple Core"
+linkTitle: "1. Keyple Core"
 date: 2020-02-24
 weight: 1
 description: >
